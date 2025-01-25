@@ -27,8 +27,10 @@ El sistema tiene como objetivo informatizar la gestión de clientes, empleados, 
 ---
 
 ## 💻 Tecnologías Utilizadas
-- **Java**
+- **JSON**
 - **MongoDB**
+- **MongoDB Compass**
+- **Moon Modeler**
 
 ---
 
