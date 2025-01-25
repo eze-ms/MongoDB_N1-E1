@@ -1,42 +1,78 @@
 # Óptica Cul d'Ampolla
 
 ## 📄 Descripción
-El sistema tiene como objetivo informatizar la gestión de clientes, empleados, proveedores y ventas en la óptica "Cul d'Ampolla", utilizando MongoDB como base de datos principal y documentos embebidos para mantener una estructura ágil y eficiente.
+ste proyecto tiene como objetivo gestionar la información de clientes, ventas, gafas y proveedores de la óptica "Cul d'Ampolla" mediante una base de datos MongoDB. Se utiliza un enfoque basado en referencias para conectar las diferentes entidades, garantizando una estructura eficiente y escalable.
 
-### Características
-1. **Gestión de Clientes:**
-   - Almacena información del cliente: nombre, dirección (documento embebido), teléfono, email, fecha de registro y cliente recomendador `recommendedBy`.
-   - Cada cliente tiene un array de ventas embebidas `sales`, que incluyen detalles de las gafas vendidas, el empleado responsable y la fecha de la venta.
+## 🗃️ Estructura de la Base de Datos
 
-2. **Gestión de Empleados:**
-   - Almacena información del empleado: nombre y apellido.
-   - Cada empleado tiene un array de ventas embebidas `sales`, que incluyen detalles del cliente y las gafas vendidas.
+## Colecciones Principales
 
-3. **Gestión de Proveedores:**
-   - Almacena información del proveedor: nombre, dirección (documento embebido), teléfono, fax y NIF.
-   - Cada proveedor tiene un array de gafas embebidas glasses`, que incluye detalles técnicos de las gafas, como marca, graduación, tipo y color de la montura, y precio.
+### 1. Clientes (Clients)
+**Descripción:** Almacena la información de los clientes de la óptica.
 
-4. **Gestión de Gafas:**
-   - Las gafas no son una colección independiente, sino que están embebidas en las ventas y los proveedores.
-   - Cada gafa almacena datos como marca, graduación de lentes, tipo y color de la montura, y precio.
+**Campos:**
+- `_id`: Identificador único del cliente (ObjectId).
+- `name`: Nombre del cliente (string).
+- `postal address`: Dirección postal del cliente (string).
+- `phone`: Teléfono del cliente (string).
+- `email`: Correo electrónico del cliente (string).
+- `registerDate`: Fecha de registro del cliente (date).
+- `recommendedBy`: Referencia al cliente que lo recomendó (ObjectId, opcional).
 
-5. **Gestión de Ventas:**
-   - Las ventas están embebidas tanto en clientes como en empleados.
-   - Incluyen detalles del cliente, las gafas vendidas, el proveedor de las gafas y el empleado que realizó la venta.
+---
+
+### 2. Ventas (Sales)
+**Descripción:** Registra las ventas realizadas, conectando clientes, empleados y gafas.
+
+**Campos:**
+- `_id`: Identificador único de la venta (ObjectId).
+- `client_id`: Referencia al cliente que realizó la compra (ObjectId).
+- `employee_id`: Referencia al empleado que realizó la venta (ObjectId).
+- `glasses_id`: Referencia a las gafas vendidas (ObjectId).
+- `saleDate`: Fecha de la venta (date).
+- `saleTime`: Hora de la venta (string).
+
+---
+
+### 3. Gafas (Glasses)
+**Descripción:** Almacena la información de las gafas disponibles en la óptica.
+
+**Campos:**
+- `_id`: Identificador único de las gafas (ObjectId).
+- `brand`: Marca de las gafas (string).
+- `rightLensPower`: Graduación del lente derecho (double).
+- `leftLensPower`: Graduación del lente izquierdo (double).
+- `frameType`: Tipo de montura (string).
+- `frameColor`: Color de la montura (string).
+- `rightLensColor`: Color del lente derecho (string).
+- `leftLensColor`: Color del lente izquierdo (string).
+- `price`: Precio de las gafas (double).
+- `supplier_id`: Referencia al proveedor de las gafas (ObjectId).
+
+---
+
+### 4. Proveedores (Suppliers)
+**Descripción:** Almacena la información de los proveedores de las gafas.
+
+**Campos:**
+- `_id`: Identificador único del proveedor (ObjectId).
+- `name`: Nombre del proveedor (string).
+- `phone`: Teléfono del proveedor (string).
+
 
 ---
 
 ## 💻 Tecnologías Utilizadas
-- **JSON**
-- **MongoDB**
-- **MongoDB Compass**
-- **Moon Modeler**
+- **JSON: Formato de intercambio de datos.**
+- **MongoDB: Base de datos NoSQL para almacenar la información.**
+- **MongoDB Compass: Herramienta gráfica para gestionar MongoDB.**
+- **Moon Modeler: Herramienta para diseñar y documentar la estructura de la base de datos.**
 
 ---
 
 ## 📊 Requisitos
-- Tener instalado **Java 11+**
-- Servidor **MongoDB** en ejecución.
+- Java 11+: Para ejecutar aplicaciones que interactúen con la base de datos.
+- MongoDB: Servidor de base de datos en ejecución.
 
 ---
 
