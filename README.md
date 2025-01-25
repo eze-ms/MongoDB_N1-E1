@@ -81,7 +81,6 @@ Este proyecto tiene como objetivo gestionar la información de clientes, ventas,
 1. Clonar este repositorio:
    ```bash
    git clone https://github.com/eze-ms/MongoDB_N1-E1
-
    ```
 2. Configurar la conexión a MongoDB en la clase correspondiente.
 
