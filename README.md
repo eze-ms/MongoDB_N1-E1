@@ -5,7 +5,7 @@ ste proyecto tiene como objetivo gestionar la información de clientes, ventas, 
 
 ## 🗃️ Estructura de la Base de Datos
 
-## Colecciones Principales
+# Colecciones Principales
 
 ### 1. Clientes (Clients)
 **Descripción:** Almacena la información de los clientes de la óptica.
