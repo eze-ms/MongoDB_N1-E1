@@ -1,13 +1,15 @@
 # Óptica Cul d'Ampolla
 
 ## 📄 Descripción
-ste proyecto tiene como objetivo gestionar la información de clientes, ventas, gafas y proveedores de la óptica "Cul d'Ampolla" mediante una base de datos MongoDB. Se utiliza un enfoque basado en referencias para conectar las diferentes entidades, garantizando una estructura eficiente y escalable.
+Este proyecto tiene como objetivo gestionar la información de clientes, ventas, gafas y proveedores de la óptica "Cul d'Ampolla" mediante una base de datos MongoDB. Se utiliza un enfoque basado en referencias para conectar las diferentes entidades, garantizando una estructura eficiente y escalable.
+
+---
 
 ## 🗃️ Estructura de la Base de Datos
 
-**Colecciones Principales**
+### Colecciones Principales
 
-### 1. Clientes (Clients)
+#### 1. Clientes (Clients)
 **Descripción:** Almacena la información de los clientes de la óptica.
 
 **Campos:**
@@ -21,7 +23,7 @@ ste proyecto tiene como objetivo gestionar la información de clientes, ventas, 
 
 ---
 
-### 2. Ventas (Sales)
+#### 2. Ventas (Sales)
 **Descripción:** Registra las ventas realizadas, conectando clientes, empleados y gafas.
 
 **Campos:**
@@ -34,7 +36,7 @@ ste proyecto tiene como objetivo gestionar la información de clientes, ventas, 
 
 ---
 
-### 3. Gafas (Glasses)
+#### 3. Gafas (Glasses)
 **Descripción:** Almacena la información de las gafas disponibles en la óptica.
 
 **Campos:**
@@ -51,7 +53,7 @@ ste proyecto tiene como objetivo gestionar la información de clientes, ventas, 
 
 ---
 
-### 4. Proveedores (Suppliers)
+#### 4. Proveedores (Suppliers)
 **Descripción:** Almacena la información de los proveedores de las gafas.
 
 **Campos:**
@@ -59,20 +61,19 @@ ste proyecto tiene como objetivo gestionar la información de clientes, ventas, 
 - `name`: Nombre del proveedor (string).
 - `phone`: Teléfono del proveedor (string).
 
-
 ---
 
 ## 💻 Tecnologías Utilizadas
-- **JSON: Formato de intercambio de datos.**
-- **MongoDB: Base de datos NoSQL para almacenar la información.**
-- **MongoDB Compass: Herramienta gráfica para gestionar MongoDB.**
-- **Moon Modeler: Herramienta para diseñar y documentar la estructura de la base de datos.**
+- **JSON:** Formato de intercambio de datos.
+- **MongoDB:** Base de datos NoSQL para almacenar la información.
+- **MongoDB Compass:** Herramienta gráfica para gestionar MongoDB.
+- **Moon Modeler:** Herramienta para diseñar y documentar la estructura de la base de datos.
 
 ---
 
 ## 📊 Requisitos
-- Java 11+: Para ejecutar aplicaciones que interactúen con la base de datos.
-- MongoDB: Servidor de base de datos en ejecución.
+- **Java 11+:** Para ejecutar aplicaciones que interactúen con la base de datos.
+- **MongoDB:** Servidor de base de datos en ejecución.
 
 ---
 
@@ -80,6 +81,7 @@ ste proyecto tiene como objetivo gestionar la información de clientes, ventas, 
 1. Clonar este repositorio:
    ```bash
    git clone https://github.com/eze-ms/MongoDB_N1-E1
+
    ```
 2. Configurar la conexión a MongoDB en la clase correspondiente.
 
