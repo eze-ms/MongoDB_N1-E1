@@ -1,0 +1,71 @@
+{
+    "_id": { "$oid": "507f1f77bcf86cd799439013" },
+    "name": "Ana Pérez",
+    "address": "Right Street, 123",
+    "telephone": "678912235",
+    "email": "email@email.com",
+    "registration_date": { "$date": "2023-09-23T00:00:00Z" },
+    "shoppings": [
+      {
+        "date": { "$date": "2025-01-15T10:30:00Z" },
+        "employee": "Carlos Gómez",
+        "glasses": {
+          "brand": "Rayban",
+          "graduation": {
+            "left_eye": 2.3,
+            "right_eye": 2.0
+          },
+          "glass_color": {
+            "left_eye": "transparente",
+            "right_eye": "transparente"
+          },
+          "frame_type": "Metálica",
+          "price": 127.0
+        },
+        "supplier": {
+          "name": "OptiPro S.L.",
+          "address": {
+            "street": "Calle Mayor",
+            "number": 10,
+            "city": "Barcelona",
+            "postal_code": "08001",
+            "country": "España"
+          },
+          "phone": "+34 123 456 789",
+          "fax": "+34 987 654 321",
+          "nif": "B12345678"
+        }
+      },
+      {
+        "date": { "$date": "2024-12-01T11:15:00Z" },
+        "employee": "Laura Martínez",
+        "glasses": {
+          "brand": "Oakley",
+          "graduation": {
+            "left_eye": 1.8,
+            "right_eye": 2.1
+          },
+          "glass_color": {
+            "left_eye": "gris",
+            "right_eye": "gris"
+          },
+          "frame_type": "Pasta",
+          "price": 145.0
+        },
+        "supplier": {
+          "name": "Gafas S.L.",
+          "address": {
+            "street": "Gran Vía",
+            "number": 25,
+            "city": "Madrid",
+            "postal_code": "28013",
+            "country": "España"
+          },
+          "phone": "+34 987 654 321",
+          "fax": "+34 654 321 987",
+          "nif": "C87654321"
+        }
+      }
+    ]
+  }
+  

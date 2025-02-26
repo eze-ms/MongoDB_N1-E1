@@ -1,7 +1,7 @@
 # Óptica Cul d'Ampolla
 
-## 📄 Descripción
-Este proyecto tiene como objetivo gestionar la información de clientes, ventas, gafas y proveedores de la óptica "Cul d'Ampolla" mediante una base de datos MongoDB. Se utiliza un enfoque basado en referencias para conectar las diferentes entidades, garantizando una estructura eficiente y escalable.
+## 📝 Descripción
+Este proyecto tiene como objetivo gestionar la información de clientes, compras, gafas y proveedores de la óptica "Cul d'Ampolla" mediante una base de datos MongoDB. Se utiliza un enfoque basado en documentos embebidos para conectar las diferentes entidades, facilitando la consulta y el mantenimiento de la información.
 
 ---
 
@@ -10,56 +10,36 @@ Este proyecto tiene como objetivo gestionar la información de clientes, ventas,
 ### Colecciones Principales
 
 #### 1. Clientes (Clients)
-**Descripción:** Almacena la información de los clientes de la óptica.
+**Descripción:** Almacena la información de los clientes de la óptica, incluyendo sus compras realizadas.
 
 **Campos:**
 - `_id`: Identificador único del cliente (ObjectId).
 - `name`: Nombre del cliente (string).
-- `postal address`: Dirección postal del cliente (string).
-- `phone`: Teléfono del cliente (string).
+- `address`: Dirección del cliente (string).
+- `telephone`: Teléfono del cliente (string).
 - `email`: Correo electrónico del cliente (string).
-- `registerDate`: Fecha de registro del cliente (date).
-- `recommendedBy`: Referencia al cliente que lo recomendó (ObjectId, opcional).
+- `registration_date`: Fecha de registro del cliente (date).
+- `shoppings`: Lista de compras realizadas por el cliente (array de documentos embebidos).
 
----
-
-#### 2. Ventas (Sales)
-**Descripción:** Registra las ventas realizadas, conectando clientes, empleados y gafas.
-
-**Campos:**
-- `_id`: Identificador único de la venta (ObjectId).
-- `client_id`: Referencia al cliente que realizó la compra (ObjectId).
-- `employee_id`: Referencia al empleado que realizó la venta (ObjectId).
-- `glasses_id`: Referencia a las gafas vendidas (ObjectId).
-- `saleDate`: Fecha de la venta (date).
-- `saleTime`: Hora de la venta (string).
-
----
-
-#### 3. Gafas (Glasses)
-**Descripción:** Almacena la información de las gafas disponibles en la óptica.
-
-**Campos:**
-- `_id`: Identificador único de las gafas (ObjectId).
-- `brand`: Marca de las gafas (string).
-- `rightLensPower`: Graduación del lente derecho (double).
-- `leftLensPower`: Graduación del lente izquierdo (double).
-- `frameType`: Tipo de montura (string).
-- `frameColor`: Color de la montura (string).
-- `rightLensColor`: Color del lente derecho (string).
-- `leftLensColor`: Color del lente izquierdo (string).
-- `price`: Precio de las gafas (double).
-- `supplier_id`: Referencia al proveedor de las gafas (ObjectId).
-
----
-
-#### 4. Proveedores (Suppliers)
-**Descripción:** Almacena la información de los proveedores de las gafas.
-
-**Campos:**
-- `_id`: Identificador único del proveedor (ObjectId).
-- `name`: Nombre del proveedor (string).
-- `phone`: Teléfono del proveedor (string).
+Cada compra dentro de `shoppings` contiene los siguientes campos:
+- `date`: Fecha y hora de la compra (date).
+- `employee`: Nombre del empleado que realizó la venta (string).
+- `glasses`: Objeto con la información de las gafas adquiridas:
+  - `brand`: Marca de las gafas (string).
+  - `graduation`: Objeto con la graduación de cada ojo:
+    - `left_eye`: Graduación del lente izquierdo (double).
+    - `right_eye`: Graduación del lente derecho (double).
+  - `glass_color`: Objeto con los colores de los lentes:
+    - `left_eye`: Color del lente izquierdo (string).
+    - `right_eye`: Color del lente derecho (string).
+  - `frame_type`: Tipo de montura (string).
+  - `price`: Precio de las gafas (double).
+- `supplier`: Objeto con la información del proveedor:
+  - `name`: Nombre del proveedor (string).
+  - `address`: Dirección del proveedor (objeto con `street`, `number`, `city`, `postal_code`, `country`).
+  - `phone`: Teléfono del proveedor (string).
+  - `fax`: Número de fax del proveedor (string, opcional).
+  - `nif`: Identificador fiscal del proveedor (string).
 
 ---
 
